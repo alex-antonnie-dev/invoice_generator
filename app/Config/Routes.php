@@ -31,7 +31,9 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/invoice-list/', 'InvoiceController::index');
-$routes->get('/create-invoice/', 'InvoiceController::create');
+$routes->get('/invoice/create', 'InvoiceController::create');
+$routes->get('/invoice/pdf', 'InvoiceController::generatePdf');
+$routes->post('/invoice/save', 'InvoiceController::processForm');
 
 /*
  * --------------------------------------------------------------------

@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Create Invoice</h1>
-    
+    <form method='post' action='<?php echo base_url("/invoice/save");?>'>
     <table class="table" id='invoice_create'>
         <thead>
             <tr>
@@ -55,9 +55,11 @@
             </tr>
             <tr>
                 <td><b>Grand Total</b> : <span id='grandTotal'></span></td>
+                <td><button type='submit'>Submit</button></td>
             </tr>
         </tfoot>
     </table>
+    </form>
         <script src='<?= base_url("assets/js/create-invoice.js") ?>'></script>
 </body>
 </html>

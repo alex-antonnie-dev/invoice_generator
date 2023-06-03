@@ -6,3 +6,9 @@ in SYSTEMPATH/Router/Router.php on line 474.
  4 SYSTEMPATH/CodeIgniter.php(449): CodeIgniter\CodeIgniter->tryToRouteIt()
  5 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
  6 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-03 09:57:10 --> Too few arguments to function App\Controllers\InvoiceController::generatePdf(), 0 passed in /var/www/html/personal/invoice_generator/system/CodeIgniter.php on line 934 and exactly 1 expected
+in APPPATH/Controllers/InvoiceController.php on line 31.
+ 1 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\InvoiceController->generatePdf()
+ 2 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController()
+ 3 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest()
+ 4 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
