@@ -23,7 +23,7 @@ class InvoiceController extends BaseController
         $discountPercentage = $this->request->getPost('discountPercentage');
 
 
-        // echo '<pre>';print_r($_POST);
+        // echo '<pre>';print_r($_POST);die;
         $data = ['itemName' => $name, 'quantity' => $quantity, 'unitPrice' => $unitPrice, 'tax' => $tax, 'discountPercentage' => $discountPercentage];
         $this->generatePdf($data);
     }
@@ -58,11 +58,19 @@ class InvoiceController extends BaseController
         $html .= '</tbody></table><br/><br/><br/>';
 
         $discount = $data['discountPercentage'];
-        $finalTotal = $grandTotal - (($grandTotal * $discount) /100);
+        $finalTotal = $grandTotal;
+        if($discount)
+        {
+            $finalTotal = $grandTotal - (($grandTotal * $discount) /100);
+        }
+        else
+        {
+            $discount = 0;
+        }
 
-        $html .= '<table><tbody><tr><td>Subtotal</td><td>'.$grandTotal.'</td></tr>';
+        $html .= '<table><tbody><tr><td>Subtotal</td><td>'.$grandTotal.'$</td></tr>';
         $html .= '<tr><td>Discount Percentage</td><td>'.$discount.'</td></tr>';
-        $html .= '<tr><td><b>GrandTotal</b></td><td>'.$finalTotal.'</td></tr>';
+        $html .= '<tr><td><b>GrandTotal</b></td><td>'.$finalTotal.'$</td></tr>';
         $html .= '</tbody></table>';
         $html .= '</html>';
         $dompdf->loadHtml($html);

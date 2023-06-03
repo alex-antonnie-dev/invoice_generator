@@ -43,18 +43,18 @@
                     <option value=5>5%</option>
                     <option value=10>10%</option>
                 </select></td>
-                <td><span class='unitTotal'></span></td>
+                <td><span class='unitTotal'></span>$</td>
                 <td><button type='button' class='btn btn-danger deleteItem'>-</td>
             </tr>
         </tbody>
         <tfoot>
             <tr>
-                <td>SubTotal without tax :</td><td> <span id='totalWithoutTax'></span></td>
-                <td>SubTotal including tax :</td><td> <span id='totalWithTax'></span></td>
-                <td>Discount(%) : <input type='number' name='discountPercentage' id='discountPercentage'></td>
+                <td>SubTotal without tax :</td><td> <span id='totalWithoutTax'></span>$</td>
+                <td>SubTotal including tax :</td><td> <span id='totalWithTax'></span>$</td>
+                <td>Discount(%) : <input type='number' class='form-control' name='discountPercentage' id='discountPercentage'></td>
             </tr>
             <tr>
-                <td><b>Grand Total</b> : <span id='grandTotal'></span></td>
+                <td><b>Grand Total</b> : <span id='grandTotal'></span>$</td>
                 <td><button type='submit' class='btn btn-success'>Submit</button></td>
             </tr>
         </tfoot>

@@ -71,6 +71,9 @@
     $(document).on('click', '.deleteItem', function() {
         console.log("clicked")
         $(this).closest('tr').remove();
+        calculateTotalWithoutTax();
+        calculateTotalWithTax();
+        calculateGrandTotal();
       });
 
       $(document).on('keyup change', '.calInput', function(){
