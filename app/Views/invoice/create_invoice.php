@@ -55,7 +55,7 @@
             </tr>
             <tr>
                 <td><b>Grand Total</b> : <span id='grandTotal'></span></td>
-                <td><button type='submit'>Submit</button></td>
+                <td><button type='submit' class='btn btn-success'>Submit</button></td>
             </tr>
         </tfoot>
     </table>
