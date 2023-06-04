@@ -22,8 +22,12 @@ class InvoiceController extends BaseController
 
         $discountPercentage = $this->request->getPost('discountPercentage');
 
-
-        // echo '<pre>';print_r($_POST);die;
+        if(empty($name[0]) || empty($quantity[0]) || empty($unitPrice[0]) || empty($tax[0]))
+        {
+            return redirect()->route('/');
+            exit;
+        }
+        
         $data = ['itemName' => $name, 'quantity' => $quantity, 'unitPrice' => $unitPrice, 'tax' => $tax, 'discountPercentage' => $discountPercentage];
         $this->generatePdf($data);
     }
@@ -36,7 +40,7 @@ class InvoiceController extends BaseController
         // Generate PDF content
         $html = '<html><body><h1>Invoice</h1><table><thead><tr><th>Slno</th><th>Item name</th><th>Quantity</th>';
         $html .= '<th>Price</th><th>Tax</th><th>Total</th></tr></thead><tbody>';
-        if(!empty($data['itemName']))
+        if(!empty($data['itemName']) && !empty($data['itemName'][0]))
         {
             $slno = 0;
             foreach($data['itemName'] as $key => $val)
