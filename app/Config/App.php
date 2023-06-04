@@ -19,6 +19,7 @@ class App extends BaseConfig
      */
     public string $baseURL = 'http://invoice_generator_local.com/';
 
+    // public $debug = true;
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
      * If you want to accept multiple Hostnames, set this.

@@ -29,7 +29,7 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'InvoiceController::create');
 $routes->get('/invoice-list/', 'InvoiceController::index');
 $routes->get('/invoice/create', 'InvoiceController::create');
 $routes->get('/invoice/pdf', 'InvoiceController::generatePdf');
